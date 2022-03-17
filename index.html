@@ -9,20 +9,44 @@
     </body>
     <script>
       const rps = ['rock', 'paper' , 'scissors']; 
-      let rock = 'rock';
-      let paper = 'paper';
-      let scissors = 'scissors'; 
+      let tie = 'tied!';
+      let playerWin = 'you win!';
+      let playerLose = 'you lose!';
+
       const computerPlay = rps[Math.floor(Math.random() * rps.length)];
       
+      
       console.log(computerPlay);
+
     function playRound(playerSelection, computerSelection) {
-    
+        if  (computerPlay === 'rock' && playerSelection === 'rock') {
+            return tie;
+        } else if (computerPlay === 'paper' && playerSelection === 'paper') {
+            return tie;
+        } else if (computerPlay === 'scissors' && playerSelection === 'scissors') {
+            return tie;
+        } else if (computerPlay === 'paper' && playerSelection === 'scissors') {
+            return playerWin;
+        } else if (computerPlay === 'rock' && playerSelection === 'paper') {
+            return playerWin;
+        } else if (computerPlay === 'scissors' && playerSelection === 'rock') {
+            return playerWin;
+        } else if (computerPlay === 'paper' && playerSelection === 'rock') {
+            return playerLose;
+        } else if (computerPlay === 'rock' && playerSelection === 'scissors') {
+            return playerLose;
+        } else if (computerPlay === 'scissors' && playerSelection === 'paper') {
+            return playerLose;
+        } else {
+            return 'pick one dummy';
+        }
     }
     
     const playerSelection = 'rock';
-    const computerSelection = computerPlay();
+    const computerSelection = computerPlay;
+    console.log(playRound(playerSelection, computerSelection));
     
-    
+    console.log(typeof computerPlay)
     </script>
 
 </html>
