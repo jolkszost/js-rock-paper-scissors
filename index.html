@@ -8,51 +8,76 @@
 
     </body>
     <script>
-      const selection = prompt('Rock, Paper, Scissors?');
-      const rps = ['rock', 'paper' , 'scissors']; 
+     
+ 
+  const rps = ['rock', 'paper' , 'scissors']; 
       let tie = 'tied!';
       let playerWin = 'you win!';
       let playerLose = 'you lose!';
-
+      let playerScore = 0;
+      let computerScore = 0;
+      let turns = 0;
+     
+      for (let i = 0; i < 5; i++) {
+     
+        const selection = prompt('Rock, Paper, Scissors?');
       const computerPlay = rps[Math.floor(Math.random() * rps.length)];
       
-      
-      console.log(computerPlay);
+      const playerSelection = selection.toLowerCase();
+    const computerSelection = computerPlay;
+ 
 
-    function playRound(playerSelection, computerSelection) {
-        if  (computerPlay === 'rock' && playerSelection === 'rock') {
+   
+ 
+   
+         function playRound(playerSelection, computerSelection) {
+        if  (computerPlay === playerSelection)  {
+           turns++;           
             return tie;
-        } else if (computerPlay === 'paper' && playerSelection === 'paper') {
-            return tie;
-        } else if (computerPlay === 'scissors' && playerSelection === 'scissors') {
-            return tie;
-        } else if (computerPlay === 'paper' && playerSelection === 'scissors') {
+        
+        } else if (
+            (computerPlay === 'paper' && playerSelection === 'scissors') ||
+                (computerPlay === 'rock' && playerSelection === 'paper') ||
+            (computerPlay === 'scissors' && playerSelection === 'rock')
+            ) {   
+                playerScore++;
+                turns++;
+                           
             return playerWin;
-        } else if (computerPlay === 'rock' && playerSelection === 'paper') {
-            return playerWin;
-        } else if (computerPlay === 'scissors' && playerSelection === 'rock') {
-            return playerWin;
-        } else if (computerPlay === 'paper' && playerSelection === 'rock') {
-            return playerLose;
-        } else if (computerPlay === 'rock' && playerSelection === 'scissors') {
-            return playerLose;
-        } else if (computerPlay === 'scissors' && playerSelection === 'paper') {
-            return playerLose;
+        } else if (
+            (computerPlay === 'paper' && playerSelection === 'rock') ||      
+        (computerPlay === 'rock' && playerSelection === 'scissors') ||       
+      (computerPlay === 'scissors' && playerSelection === 'paper'))
+       {  
+           computerScore++;
+           turns++;
+           
+        return playerLose;
         } else {
             return 'pick one dummy';
         }
     }
-    
-    const pSelect = selection;
-    const playerSelection = pSelect.toLowerCase();
-    const computerSelection = computerPlay;
-    console.log(playRound(playerSelection, computerSelection));
-    
-    function game() {
-
-    }
 
     
+      console.log(playRound(playerSelection, computerSelection)); 
+      console.log(computerPlay);
+      console.log(playerScore, computerScore, turns);
+      }
+
+      if (turns = 5 && playerScore > computerScore) {
+          alert('you won!');
+          
+      } else if (turns = 5 && computerScore > playerScore) {
+          alert('you lost!');
+      } else if (turns = 5 && playerScore === computerScore) {
+          alert('TIE GAME!');
+      }
+
+     
+    
+      
+
+  
      
 
 
