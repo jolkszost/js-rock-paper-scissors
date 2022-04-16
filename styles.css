@@ -1,0 +1,105 @@
+#buttonContainer {
+   /* background-color: #ff5c5c; */
+    background-color: #f52aad;
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+button {
+    
+    
+    height: 200px;
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xxx-large;
+    border-radius: 50%;
+}
+
+#rock {
+    background-color: #5aa8f9;
+    color: #893d10;
+    border-style:dashed;
+    border-width: 12px;
+    border-color: #0069c5;
+}
+
+#scissors {
+    background-color: red;
+    color: black;
+    border-style:ridge;
+    border-width: 12px;
+    border-color: #f91818;
+}
+#paper {
+    color: black;
+    background-image: linear-gradient(to right, white, red, white);
+    border-style: inset;
+    border-width: 12px;
+    border-color: red;
+}
+
+#results {
+    background-color: rgb(19, 104, 161);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 260px;
+    width: 600px;
+    height:450px;
+
+
+}
+#player {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 260px;
+    width: 320px;
+    max-height: 600px;
+     background-color: #0c9641;
+}
+#computer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 260px;
+    width: 320px;
+    background-color: #cf37a2e5;
+}
+
+#pScore {
+    margin-top: 260px;
+    width: 250px;
+   background-color: #10883e;
+}
+#cScore {
+    margin-top: 260px;
+    width: 250px;
+    background-color: #ad127ee5;
+}
+#match {
+    margin-top: 260px;
+    display: flex;
+    width: 100%;
+}
+body {
+    background-image: linear-gradient(to left, blueviolet, rgb(97, 3, 97));
+    display: flex;
+    justify-content: center;
+    margin:0%;
+}
+
+p {
+    font-size: large;
+}
+
+img {
+    width: 150px;
+    max-height: 150px;
+}

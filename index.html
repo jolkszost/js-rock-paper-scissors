@@ -3,84 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
+        <script defer src="rockPS.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
-    </body>
-    <script>
-     
- 
-  const rps = ['rock', 'paper' , 'scissors']; 
-      let tie = 'tied!';
-      let playerWin = 'you win!';
-      let playerLose = 'you lose!';
-      let playerScore = 0;
-      let computerScore = 0;
-      let turns = 0;
-     
-      for (let i = 0; i < 5; i++) {
-     
-        const selection = prompt('Rock, Paper, Scissors?');
-      const computerPlay = rps[Math.floor(Math.random() * rps.length)];
-      
-      const playerSelection = selection.toLowerCase();
-    const computerSelection = computerPlay;
- 
-
+      <div id="buttonContainer">
+        <button id="rock" name="rock">RockCandy</button>
+        <button id="paper" name="paper">Peppermint</button>
+        <button id="scissors" name="scissors">Twizzlers</button>
+      </div>
+  <div id="match">
+      <div id="pScore"></div>
+        <div id="player"></div>
    
- 
-   
-         function playRound(playerSelection, computerSelection) {
-        if  (computerPlay === playerSelection)  {
-           turns++;           
-            return tie;
         
-        } else if (
-            (computerPlay === 'paper' && playerSelection === 'scissors') ||
-                (computerPlay === 'rock' && playerSelection === 'paper') ||
-            (computerPlay === 'scissors' && playerSelection === 'rock')
-            ) {   
-                playerScore++;
-                turns++;
-                           
-            return playerWin;
-        } else if (
-            (computerPlay === 'paper' && playerSelection === 'rock') ||      
-        (computerPlay === 'rock' && playerSelection === 'scissors') ||       
-      (computerPlay === 'scissors' && playerSelection === 'paper'))
-       {  
-           computerScore++;
-           turns++;
-           
-        return playerLose;
-        } else {
-            return 'pick one dummy';
-        }
-    }
-
-    
-      console.log(playRound(playerSelection, computerSelection)); 
-      console.log(computerPlay);
-      console.log(playerScore, computerScore, turns);
-      }
-
-      if (turns = 5 && playerScore > computerScore) {
-          alert('you won!');
-          
-      } else if (turns = 5 && computerScore > playerScore) {
-          alert('you lost!');
-      } else if (turns = 5 && playerScore === computerScore) {
-          alert('TIE GAME!');
-      }
-
-     
-    
-      
-
+        <div id="results"> </div>
+        
+    <div id="computer"></div> 
+    <div id="cScore"></div>
+   
+  </div>
+ </body>
+   
+ 
   
-     
-
-
-    </script>
 
 </html>
